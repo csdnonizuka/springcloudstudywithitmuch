@@ -1,18 +1,21 @@
 server:
-  port: 7800
+  port: 8100
 eureka:
   client:
     healthcheck:
       enabled: true
     service-url:
-       defaultZone: http://root:abc.123@localhost:8761/eureka    #localhost前面一定要加http://不加会抛异常
+      defaultZone: http://root:abc.123@localhost:8761/eureka
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
 spring:
   application:
-    name: micro-service-consumer-movie-ribbon-properties-customizing
+    name: micro-service-consumer-movie-ribbon-without-eureka
 
+ribbon:
+  eureka:
+    enabled: false
 micro-service-provider-user:
   ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    listOfServers: localhost:7901

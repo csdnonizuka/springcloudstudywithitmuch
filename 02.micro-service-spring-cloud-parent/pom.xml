@@ -9,9 +9,12 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>micro-service-provider-user</module>
         <module>micro-service-consumer-movie</module>
+        <module>micro-service-consumer-movie-feign</module>
+        <module>micro-service-consumer-movie-ribbon-properties-customizing</module>
+        <module>micro-service-consumer-movie-ribbon-without-eureka</module>
         <module>micro-service-discovery-eureka</module>
+        <module>micro-service-provider-user</module>
     </modules>
 
     <properties>
