@@ -1,7 +1,5 @@
 server:
-  port: 7901
-user:
-  userServicePath: http://localhost:7900/simple/
+  port: 7902
 eureka:
   client:
     healthcheck:
@@ -13,4 +11,8 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
 spring:
   application:
-    name: micro-service-consumer-movie
+    name: micro-service-consumer-movie-ribbon-properties-customizing
+
+micro-service-provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
