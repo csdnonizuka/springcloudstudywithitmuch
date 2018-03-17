@@ -1,6 +1,6 @@
 package com.onizuka.spring.cloud.study.entity;
 
-import lombok.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 

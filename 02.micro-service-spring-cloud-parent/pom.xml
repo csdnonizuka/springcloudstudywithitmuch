@@ -11,6 +11,7 @@
     <modules>
         <module>micro-service-consumer-movie</module>
         <module>micro-service-consumer-movie-feign</module>
+        <module>micro-service-consumer-movie-feign-customizing</module>
         <module>micro-service-consumer-movie-ribbon-properties-customizing</module>
         <module>micro-service-consumer-movie-ribbon-without-eureka</module>
         <module>micro-service-discovery-eureka</module>
