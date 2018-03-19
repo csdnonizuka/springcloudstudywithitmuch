@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: micro-service-discovery-eureka-ha
+---
+server:
+  port: 8761
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    service-url:
+      defaultZone: http://root2:abc.2@peer2:8762/eureka/, http://root3:abc.3@peer3:8763/eureka/
+security:
+  user:
+    name: root1
+    password: abc.1
+
+---
+server:
+  port: 8762
+spring:
+  profiles: peer2
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    service-url:
+      defaultZone: http://root1:abc.1@peer1:8761/eureka/, http://root3:abc.3@peer3:8763/eureka/
+security:
+  user:
+    name: root2
+    password: abc.2
+---
+server:
+  port: 8763
+spring:
+  profiles: peer3
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    service-url:
+      defaultZone: http://root1:abc.1@peer1:8761/eureka/, http://root2:abc.2@peer2:8762/eureka/
+security:
+  user:
+    name: root3
+    password: abc.3
