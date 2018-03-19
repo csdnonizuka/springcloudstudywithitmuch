@@ -11,7 +11,7 @@ eureka:
     hostname: peer1
   client:
     service-url:
-      defaultZone: http://root2:abc.2@peer2:8762/eureka/, http://root3:abc.3@peer3:8763/eureka/
+      defaultZone: http://root2:abc.2@peer2:8762/eureka/,http://root3:abc.3@peer3:8763/eureka/   #","号前不能加空格
 security:
   user:
     name: root1
@@ -27,7 +27,7 @@ eureka:
     hostname: peer2
   client:
     service-url:
-      defaultZone: http://root1:abc.1@peer1:8761/eureka/, http://root3:abc.3@peer3:8763/eureka/
+      defaultZone: http://root1:abc.1@peer1:8761/eureka/,http://root3:abc.3@peer3:8763/eureka/
 security:
   user:
     name: root2
@@ -42,7 +42,7 @@ eureka:
     hostname: peer3
   client:
     service-url:
-      defaultZone: http://root1:abc.1@peer1:8761/eureka/, http://root2:abc.2@peer2:8762/eureka/
+      defaultZone: http://root1:abc.1@peer1:8761/eureka/,http://root2:abc.2@peer2:8762/eureka/
 security:
   user:
     name: root3
