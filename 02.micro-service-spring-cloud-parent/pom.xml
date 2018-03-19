@@ -14,6 +14,7 @@
         <module>micro-service-consumer-movie-feign-customizing</module>
         <module>micro-service-consumer-movie-ribbon-properties-customizing</module>
         <module>micro-service-consumer-movie-ribbon-without-eureka</module>
+        <module>micro-service-consumer-movie-ribbon-with-hystrix</module>
         <module>micro-service-discovery-eureka</module>
         <module>micro-service-discovery-eureka-ha</module>
         <module>micro-service-provider-user</module>
