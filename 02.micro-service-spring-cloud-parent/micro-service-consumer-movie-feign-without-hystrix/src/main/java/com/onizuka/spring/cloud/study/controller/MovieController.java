@@ -1,28 +1,28 @@
 package com.onizuka.spring.cloud.study.controller;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.onizuka.spring.cloud.study.entity.User;
+import com.onizuka.spring.cloud.study.feign.FeignClient2;
+import com.onizuka.spring.cloud.study.feign.UserFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class MovieController {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private UserFeignClient userFeignClient;
+    @Autowired
+    private FeignClient2 feignClient2;
 
     @GetMapping("/movie/{id}")
-    @HystrixCommand(fallbackMethod = "findByIdFallback")
     public User findById(@PathVariable Long id) {
-        return this.restTemplate.getForObject("http://micro-service-provider-user/simple/" + id, User.class);
+        return userFeignClient.findById(id);
     }
 
-    public User findByIdFallback(Long id) {
-        User user = new User();
-        user.setId(0L);
-        return user;
+    @GetMapping("/{serviceName}")
+    public String findServiceInfoFromEurekaByServiceName(@PathVariable String serviceName) {
+        return this.feignClient2.findServiceInfoFromEurekaByServiceName(serviceName);
     }
 }

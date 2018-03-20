@@ -1,0 +1,23 @@
+server:
+  port: 7300
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+       defaultZone: http://root:abc.123@localhost:8761/eureka       #localhost前面一定要加http://不加会抛异常
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: micro-service-consumer-movie-feign-with-hystrix
+
+feign:
+  hystrix:
+    enabled: true
+# 解决第一次请求异常的方案：
+# hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+# 或者：
+# hystrix.command.default.execution.timeout.enabled: false
+# 或者
+# feign.hystrix.enabled: false

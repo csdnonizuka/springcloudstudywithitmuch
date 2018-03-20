@@ -19,6 +19,6 @@ eureka:
     healthcheck:
       enabled: true
     service-url:
-     defaultZone: http://root1:abc.1@peer1:8761/eureka/
+     defaultZone: http://root:abc.123@localhost:8761/eureka/
   instance:
     prefer-ip-address: true
