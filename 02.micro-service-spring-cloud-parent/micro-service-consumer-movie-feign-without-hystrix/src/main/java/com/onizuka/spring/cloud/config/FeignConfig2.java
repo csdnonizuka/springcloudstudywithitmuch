@@ -1,6 +1,5 @@
 package com.onizuka.spring.cloud.config;
 
-import feign.Contract;
 import feign.Feign;
 import feign.auth.BasicAuthRequestInterceptor;
 import org.springframework.context.annotation.Bean;
