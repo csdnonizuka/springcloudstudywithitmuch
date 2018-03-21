@@ -20,6 +20,8 @@
         <module>micro-service-consumer-movie-ribbon-without-eureka</module>
         <module>micro-service-discovery-eureka</module>
         <module>micro-service-discovery-eureka-ha</module>
+        <module>micro-service-hystrix-dashboard</module>
+        <module>micro-service-hystrix-turbine</module>
         <module>micro-service-provider-user</module>
     </modules>
 
@@ -35,6 +37,10 @@
         <version>1.5.10.RELEASE</version>
     </parent>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
