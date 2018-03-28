@@ -20,6 +20,7 @@
         <module>micro-service-consumer-movie-ribbon-without-eureka</module>
         <module>micro-service-discovery-eureka</module>
         <module>micro-service-discovery-eureka-ha</module>
+        <module>micro-service-gateway-zuul</module>
         <module>micro-service-hystrix-dashboard</module>
         <module>micro-service-hystrix-turbine</module>
         <module>micro-service-provider-user</module>

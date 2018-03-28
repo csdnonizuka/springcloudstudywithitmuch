@@ -13,3 +13,9 @@ turbine:
   aggregator:
     cluster-config: MICRO-SERVICE-CONSUMER-MOVIE-RIBBON-WITH-HYSTRIX
   app-config: micro-service-consumer-movie-ribbon-with-hystrix
+
+turbine.instanceUrlSuffix.MICRO-SERVICE-MOVIE-RIBBON-WITH-HYSTRIX: /ribbon/hystrix.stream
+logging:
+  level:
+    root: info
+    com.netflix.turbine.monitor: debug
